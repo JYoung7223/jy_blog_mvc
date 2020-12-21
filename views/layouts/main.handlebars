@@ -73,7 +73,7 @@
     <div class="container">
         <div class="row">
             <!-- Left column section -->
-            <section class="col-lg-3 d-none d-lg-block">
+            {{!-- <section class="col-lg-3 d-none d-lg-block">
                 <form>
                     <!-- General Search Filter Criteria -->
                     <div class="form-group row">
@@ -97,63 +97,23 @@
                         </div>
                     </div>                          
                 </form>
-            </section>
+            </section> --}}
 
             <!-- Main content section -->            
             <article class="col-12 col-lg-6">
                 {{{body}}}
-                
-                    <div class="card col-md-6">
-                        <div class="card mb-3" style="max-width: 540px;">
-                            <div class="row no-gutters">
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title" id="cardTitle">Card title</h5>
-                                        <p class="card-text" id="cardDescription">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                        <p class="card-text"><small class="text-muted"><a href="" class="read-link" id="readLink">Read More</a></small></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card col-md-6">
-                        <div class="card mb-3" style="max-width: 540px;">
-                            <div class="row no-gutters">
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title" id="cardTitle">Card title</h5>
-                                        <p class="card-text" id="cardDescription">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                        <p class="card-text"><small class="text-muted"><a href="" class="read-link" id="readLink">Read More</a></small></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card col-md-6">
-                        <div class="card mb-3" style="max-width: 540px;">
-                            <div class="row no-gutters">
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title" id="cardTitle">Card title</h5>
-                                        <p class="card-text" id="cardDescription">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                        <p class="card-text"><small class="text-muted"><a href="" class="read-link" id="readLink">Read More</a></small></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </article>
 
             <!-- Right column section -->            
-            <aside class="col-lg-3 d-none d-lg-block">
+            {{!-- <aside class="col-lg-3 d-none d-lg-block">
                 <!-- Recent Posts -->
                 <div class="row">
                     {{#each recentPosts as post}}
                     <div class="col-12"><a href="/post/{{post.id}}"><p>{{post.name}}</p></a></div>
                     {{/each}}
                 </div>
-            </aside>
+            </aside> --}}
+
         </div>
     </div>
 
