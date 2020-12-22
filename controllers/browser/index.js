@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Post, User, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// Home Page
 router.get('/', async (req, res) => {
   try {
     // Get all posts and JOIN with user data
@@ -27,6 +28,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+// View Specific post
 router.get('/post/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
@@ -48,16 +50,19 @@ router.get('/post/:id', async (req, res) => {
     });    
 
     const post = postData.get({ plain: true });
-
+    console.log(post);
+    console.log(req.session.user_id);
     res.render('post', {
       ...post,
-      logged_in: req.session.logged_in
+      logged_in: req.session.logged_in,
+      logged_in_user: req.session.user_id
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
+// View Profile
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
   try {
@@ -68,7 +73,6 @@ router.get('/profile', withAuth, async (req, res) => {
     });
 
     const user = userData.get({ plain: true });
-
     res.render('profile', {
       ...user,
       logged_in: true
@@ -78,6 +82,7 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });
 
+// Login Page
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
@@ -88,6 +93,7 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+// Signup Page
 router.get('/signup', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
@@ -98,6 +104,7 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
+// Logout Page
 router.get('/logout', (req, res) => {
   console.log("Logging Out");
   if (req.session.logged_in) {
