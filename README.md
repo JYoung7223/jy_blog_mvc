@@ -58,4 +58,4 @@ You can find more of my work at [My Github Repo](https://github.com/JYoung7223 "
 Deployed project can be found at: https://jy-best-blog.herokuapp.com/
 
 Below is a sample screenshot:
-![Project Sample](https://jy-best-blog.herokuapp.com/ "Project Sample")
+![Project Sample](./assets/my_blog.png "Project Sample")
